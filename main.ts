@@ -1,3 +1,15 @@
+function askPlayer () {
+    answer = game.askForString("What was in Yogi's basket?")
+}
+function Change_Picnic_Food () {
+    for (let index = 0; index <= foodImages.length - 1; index++) {
+        picnicFood.setImage(foodImages[index])
+        pause(500)
+    }
+}
+let answer = ""
+let foodImages: Image[] = []
+let picnicFood: Sprite = null
 scene.setBackgroundImage(img`
     1111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222
     1111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222
@@ -120,7 +132,7 @@ scene.setBackgroundImage(img`
     2222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111
     2222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111222221111122222111112222211111
     `)
-let picnicFood = sprites.create(img`
+picnicFood = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -156,7 +168,7 @@ picnicFood.setImage(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `)
-let foodImages = [
+foodImages = [
 img`
     . . . . . . . e c 7 . . . . . . 
     . . . . e e e c 7 7 e e . . . . 
@@ -253,5 +265,34 @@ let foodStrings = [
 "lemon",
 "ice cream",
 "cherries",
-"strawberry"
+"strawberry",
+"cherry",
+"Apple",
+"Lemon",
+"Ice Cream",
+"soft serve",
+"Soft Serve",
+"Cherries",
+"Cherry",
+"Strawberry"
 ]
+Change_Picnic_Food()
+picnicFood.setImage(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `)
+askPlayer()
